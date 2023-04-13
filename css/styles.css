@@ -250,3 +250,64 @@ Projects Section Styles
   display: flex;
   gap: 2rem;
 }
+
+/* ===============================
+Contact Section Styles
+================================== */
+
+.contact {
+  background-color: var(--clr-darkgrey);
+}
+
+.contact .container {
+  padding-top: 4.75rem;
+  padding-bottom: 4.75rem;
+  text-align: center;
+}
+
+.contact__info__header {
+  margin-bottom: 1.125rem;
+}
+
+.contact__info__blurb {
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  width: 100%;
+}
+
+form > *:not(input[type="submit"]) {
+  border: none;
+  border-bottom: 1px solid var(--clr-white);
+  color: var(--clr-white);
+  background-color: transparent;
+  line-height: 1.65;
+  padding: 0.875rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+form > *:not(input[type="submit"])::placeholder {
+  color: var(--clr-white);
+  opacity: 0.5;
+}
+
+input[type="submit"] {
+  padding: 0.875rem 0;
+  width: auto;
+  line-height: 1;
+  letter-spacing: 0.141rem;
+  border: none;
+  border-bottom: 2px solid var(--clr-green);
+  text-transform: uppercase;
+  color: var(--clr-white);
+  background-color: transparent;
+  margin-top: 0.5rem;
+  align-self: end;
+}
