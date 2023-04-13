@@ -1,0 +1,252 @@
+/* ===============================
+Custom Variables
+================================== */
+
+:root {
+  --clr-black: hsl(0, 0%, 8%);
+  --clr-darkgrey: hsl(0, 0%, 14%);
+  --clr-grey: hsl(0, 0%, 85%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-green: hsl(153, 71%, 59%);
+ 
+  --ff-SpaceGrotesk: 'Space Grotesk', Arial, Helvetica, sans-serif;
+}
+
+
+/* ===============================
+General Styles
+================================== */
+
+body {
+  background-color: var(--clr-black);
+  font-family: var(--ff-SpaceGrotesk);
+  font-weight: 500;
+}
+
+h1,h2,h3,a,button,p.skill__name,p.name {
+  color: var(--clr-white);
+  font-weight: 700;
+}
+
+p {
+  color: var(--clr-grey);
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+
+/* ===============================
+Utility Classes
+================================== */
+
+.heading-xl {
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: -0.063rem;
+}
+
+.heading-l {
+  font-size: 2rem;  
+  line-height: 1;
+  letter-spacing: -0.063rem;
+}
+
+.heading-m {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+@media (min-width: 80em) {
+  .heading-xl {
+    font-size: 5.5rem;
+  }
+  .heading-l {
+    font-size: 3rem;
+  }
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 1.25rem;
+  position: relative;
+}
+
+
+/* ===============================
+a / button Styles
+================================== */
+
+.primary-cta { 
+  padding: 0.875rem 0;
+  line-height: 1;
+  letter-spacing: 0.141rem;
+  border: none;
+  border-bottom: 2px solid var(--clr-green);
+}
+
+.primary-cta, .project__skills__skill, .project__name {
+  text-transform: uppercase;
+}
+
+
+
+/* ===============================
+Header Styles
+================================== */
+
+header {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+nav.socials ul {
+  display: flex;
+  gap: 1.75rem;
+}
+
+p.name {
+  font-size: 1.5rem;
+}
+
+
+/* ===============================
+Hero Section Styles
+================================== */
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 4.75rem;
+}
+
+.hero__content {
+  order: 1;
+  text-align: center;
+}
+
+.hero__img {
+  order: 0;
+  width: 180px;
+  margin-bottom: 2.75rem;
+}
+
+h1.heading-xl span {
+  position: relative;
+}
+h1.heading-xl span::before {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-green);
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+}
+
+.hero__content__heading {
+  margin-bottom: 2rem;
+}
+
+.hero__content__about {
+  line-height: 1.65;
+  margin-bottom: 0.875rem;
+}
+
+.hero .container::after,
+.skills .container::after {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-white);
+  height: 1px;
+  width: calc(100% - 2.5rem);
+  bottom: 0;  
+}
+
+
+/* ===============================
+Skills Section Styles
+================================== */
+
+.skills .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2.875rem;
+  padding-bottom: 2.875rem;
+}
+
+.skill {
+  text-align: center;
+}
+
+.skill__name {
+  margin-bottom: 0.5rem;
+}
+
+
+/* ===============================
+Projects Section Styles
+================================== */
+
+.projects .container {
+  padding-top: 4.75rem;
+  padding-bottom: 4.75rem;
+}
+
+.projects__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 2.25rem;
+}
+
+.projects__header .primary-cta {
+  padding-top: 0;
+}
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project__img {
+  margin-bottom: 1.5rem;
+}
+
+.project__name {
+  margin-bottom: 0.875rem;
+}
+
+.project__skills {
+  display: flex;
+  gap: 1.125rem;
+  margin-bottom: 0.625rem;
+}
+
+.project__skills__skill {
+  font-size: 1.125rem;
+}
+
+.project__links {
+  display: flex;
+  gap: 2rem;
+}
