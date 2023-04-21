@@ -37,6 +37,12 @@ a {
   display: inline-block;
 }
 
+@media (min-width: 48em) {
+  p {
+    font-size: 1.125rem;
+  }
+}
+
 
 
 /* ===============================
@@ -60,19 +66,32 @@ Utility Classes
   line-height: 1;
 }
 
-@media (min-width: 80em) {
+.container {
+  max-width: 100%;
+  padding: 0 1.125rem;
+  position: relative;
+}
+
+
+@media (min-width: 48em) {
+  .container {
+    padding: 0 1.875rem;
+    /* 1130px for desktop + 60px of padding */
+    max-width: 1190px;
+    margin: 0 auto;
+  } 
   .heading-xl {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
   }
   .heading-l {
     font-size: 3rem;
   }
 }
 
-.container {
-  max-width: 100%;
-  padding: 0 1.125rem;
-  position: relative;
+@media (min-width: 64em) {
+  .heading-xl {
+    font-size: 5.5rem;
+  }
 }
 
 
@@ -81,7 +100,7 @@ a / button Styles
 ================================== */
 
 .primary-cta { 
-  padding: 0.875rem 0;
+  padding: 0.75rem 0;
   line-height: 1;
   letter-spacing: 0.141rem;
   border: none;
@@ -117,11 +136,28 @@ header .container {
 
 nav.socials ul {
   display: flex;
+  align-items: center;
   gap: 1.75rem;
 }
 
 p.name {
   font-size: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+  p.name {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 64em) {
+  .socials {
+    padding-right: 1.75rem;
+  }
 }
 
 
@@ -133,7 +169,6 @@ Hero Section Styles
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 0.75rem;
   padding-bottom: 4.75rem;
 }
 
@@ -144,12 +179,13 @@ Hero Section Styles
 
 .hero__img {
   order: 0;
-  width: 180px;
+  width: 174px;
   margin-bottom: 2.75rem;
 }
 
 h1.heading-xl span {
   position: relative;
+  display: inline-block;
 }
 h1.heading-xl span::before {
   content: "";
@@ -157,7 +193,7 @@ h1.heading-xl span::before {
   background-color: var(--clr-green);
   height: 4px;
   width: 100%;
-  bottom: 0;
+  bottom: -6px;
 }
 
 .hero__content__heading {
@@ -171,15 +207,86 @@ h1.heading-xl span::before {
 
 .hero .container::after,
 .skills .container::after,
-.contact .container::after {
+footer .container::before {
   content: "";
   position: absolute;
   background-color: var(--clr-white);
   height: 1px;
   width: calc(100% - 2.25rem);
-  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.hero .container::after,
+.skills .container::after {
+  bottom: 0;  
+}
+
+footer .container::before {
+  top: 0;
+}
+
+
+/* .hero {
+  background-color: var(--clr-black);
+  background-image: url('../images/pattern-rings.svg');
+  background-repeat: no-repeat;
+  background-size: auto 8rem;
+  background-position: left -21.875rem top 8.5rem;
+} */
+
+@media (min-width: 48em) {
+  .hero .container {
+    flex-direction: row;
+    overflow-x: hidden;
+    padding-bottom: 3.75rem;
+  }  
+  .hero__content {
+    order: 0;
+    text-align: left;
+    padding-top: 7.375rem;
+    z-index: 2;
+  }
+  .hero__img {
+    order: 1;
+    max-width: 322px;
+    margin-bottom: 0;
+    transform: translateX(2rem);
+    margin-left: -3rem;
+  }
+  .hero__content,
+  .hero__img {
+    flex-basis: 100%;
+  }
+  .hero__content__heading {
+    margin-bottom: 4.25rem;
+  }
+  .hero__content__about {
+    margin-bottom: 1.875rem;
+  }
+
+  .hero .container::after,
+  .skills .container::after,
+  footer .container::before {
+    width: calc(100% - 3.75rem);
+  }
+}
+
+@media (min-width: 64em) {
+  .hero .container {
+    padding-bottom: 6.25rem;
+  }
+  .hero__img {
+    max-width: 445px;
+    transform: none;
+  } 
+  .hero__content__heading {
+    margin-bottom: 2.625rem;
+  }
+  .hero__content__about {
+    width: 420px;  
+    margin-bottom: 3.25rem;
+  }
 }
 
 
@@ -188,9 +295,7 @@ Skills Section Styles
 ================================== */
 
 .skills .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
   gap: 2rem;
   padding-top: 2.875rem;
   padding-bottom: 2.875rem;
@@ -202,6 +307,33 @@ Skills Section Styles
 
 .skill__name {
   margin-bottom: 0.5rem;
+}
+
+@media (min-width: 48em) {
+  .skills .container {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3.125rem;
+    /* Removed padding-top of projects section since line is gone */
+    padding-bottom: 6.5rem;
+    gap: 3.875rem 1.5rem;
+  }
+  .skill {
+    text-align: left;
+  }
+  .skill__name {
+    margin-bottom: 0.75rem;
+  }
+  .skills .container::after {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .skills .container {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 4.5rem;
+    padding-bottom: 8.75rem;
+  }
 }
 
 
@@ -226,9 +358,12 @@ Projects Section Styles
 }
 
 .project-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  gap: 2.875rem;
+}
+
+.project {
+  margin: 0 auto;
 }
 
 .project__img {
@@ -252,6 +387,26 @@ Projects Section Styles
 .project__links {
   display: flex;
   gap: 2rem;
+}
+
+@media (min-width: 48em) {
+  .projects .container {
+    padding-top: 0;
+    padding-bottom: 5.875rem;
+  }
+  .projects__header {
+    margin-bottom: 3.75rem;
+  }
+  .project-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.75rem 1.5rem;
+  }
+  .project__skills {
+    margin-bottom: 1rem;
+  }
+  .project {
+    margin: 0;
+  }
 }
 
 /* ===============================
@@ -315,6 +470,15 @@ input[type="submit"] {
   align-self: end;
 }
 
+@media (min-width: 48em) {
+  .contact .container {
+    padding-top: 3.875rem;
+    padding-bottom: 5.625rem;
+    max-width: 500px;
+  }
+  
+}
+
 /* ===============================
 Footer Section Styles
 ================================== */
@@ -331,3 +495,19 @@ footer .container {
   align-items: center;
   gap: 1.5rem;
 }
+
+@media (min-width: 48em) {
+  footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+
+
+/* ===============================
+Tablet & Desktop Media Queries
+================================== */
+
