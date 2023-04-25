@@ -14,9 +14,10 @@ This project is static and fully-responsive across various device sizes. By defa
 [Preview the site here (hosted via Netlify)](https://chimerical-selkie-e9a9da.netlify.app)
 
 ## Development Process
-- Utilized semantic HTML markup, divided into three main blocks, with the *main* block further divided into *section* elements:
+- Utilized semantic HTML markup, divided into three main blocks:
   - Header
   - Main
+    - Further divided into *section* elements
   - Footer
 - Used a mobile-first approach for writing the CSS. Utilized two *breakpoint* media queries to adapt the layout for larger devices (Tablet, Desktop)
 - Used a *container* class to set the max-width of the different sections, allowing for full-width backgrounds
