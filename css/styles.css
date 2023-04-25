@@ -1,5 +1,5 @@
 /* ===============================
-Custom Variables
+CSS Variables
 ================================== */
 
 :root {
@@ -14,7 +14,7 @@ Custom Variables
 
 
 /* ===============================
-General Styles
+General / Font Styles
 ================================== */
 
 body {
@@ -37,12 +37,16 @@ a {
   display: inline-block;
 }
 
+main {
+  /* Prevent pseudo-elements from causing horizontal scroll */
+  overflow-x: hidden;
+}
+
 @media (min-width: 48em) {
   p {
     font-size: 1.125rem;
   }
 }
-
 
 
 /* ===============================
@@ -98,7 +102,7 @@ Utility Classes
 
 
 /* ===============================
-a / button Styles
+Anchor / Button Styles
 ================================== */
 
 .primary-cta { 
@@ -122,7 +126,6 @@ input[type="submit"]:focus {
 }
 
 
-
 /* ===============================
 Header Styles
 ================================== */
@@ -141,7 +144,11 @@ header .container {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
+}
+
+p.name {
+  font-size: 1.5rem;
 }
 
 nav.socials ul {
@@ -150,16 +157,12 @@ nav.socials ul {
   gap: 1.75rem;
 }
 
-nav.socials li a {
-  transition: color 200ms ease-in-out;
+nav.socials li path {
+  transition: fill 150ms ease-in-out;
 }
 nav.socials li a:hover path,
 nav.socials li a:focus path {
   fill: var(--clr-green);
-}
-
-p.name {
-  font-size: 1.5rem;
 }
 
 @media (min-width: 48em) {
@@ -233,6 +236,7 @@ footer .container::before {
   width: calc(100% - 2.25rem);
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .hero .container::after,
@@ -240,18 +244,26 @@ footer .container::before {
   bottom: 0;  
 }
 
-footer .container::before {
-  top: 0;
-}
-
-
-/* .hero {
+.hero {
   background-color: var(--clr-black);
   background-image: url('../images/pattern-rings.svg');
   background-repeat: no-repeat;
   background-size: auto 8rem;
   background-position: left -21.875rem top 8.5rem;
-} */
+}
+
+.hero__img::after {
+  content: "";
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  background-color: transparent;
+  background-image: url('../images/pattern-circle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: -4rem;
+  top: 16rem; 
+}
 
 @media (min-width: 48em) {
   .hero .container {
@@ -271,6 +283,7 @@ footer .container::before {
     margin-bottom: 0;
     transform: translateX(2rem);
     margin-left: -3rem;
+    position: relative;
   }
   .hero__content,
   .hero__img {
@@ -278,15 +291,23 @@ footer .container::before {
   }
   .hero__content__heading {
     margin-bottom: 4.25rem;
+    max-width: 600px;
   }
   .hero__content__about {
     margin-bottom: 1.875rem;
+    max-width: 500px;
   }
-
   .hero .container::after,
   .skills .container::after,
   footer .container::before {
     width: calc(100% - 3.75rem);
+  }
+  .hero {
+    background-position: left -16.875rem top 5.5rem;
+  }
+  .hero__img::after {
+    bottom: 0; 
+    top: auto; 
   }
 }
 
@@ -300,10 +321,20 @@ footer .container::before {
   } 
   .hero__content__heading {
     margin-bottom: 2.625rem;
+    max-width: 100%;
   }
   .hero__content__about {
     width: 420px;  
     margin-bottom: 3.25rem;
+    max-width: 100%;
+  }
+  .hero {
+    background-position: left -5.875rem top 9.5rem;
+  }
+  .hero__img::after {
+    bottom: 3.75rem; 
+    right: auto;
+    left: -4rem;
   }
 }
 
@@ -408,6 +439,22 @@ Projects Section Styles
   gap: 2rem;
 }
 
+.projects {
+  position: relative;
+}
+.projects::before {
+  content: "";
+  position: absolute;
+  height: 8rem;
+  width: 33.125rem;
+  background-color: transparent;
+  background-image: url('../images/pattern-rings.svg');
+  background-repeat: no-repeat;
+  background-size: auto 8rem;
+  right: -21.875rem;
+  top: -4rem;
+}
+
 @media (min-width: 48em) {
   .projects .container {
     padding-top: 0;
@@ -426,13 +473,16 @@ Projects Section Styles
   .project {
     margin: 0;
   }
+  .projects::before {
+    top: -10rem;
+  }
 }
 
 @media (min-width: 73.125em) {
   .project__img {
-    position: relative;
     margin-bottom: 0;
   }
+
   /* Utilize grid to overlap .project__img and .project__links */
   .project {
     display: grid;
@@ -452,11 +502,15 @@ Projects Section Styles
     flex-direction: column;
     gap: 2.5rem;
     opacity: 0;
-    background-color: hsla(0, 0%, 0%, 0.6);
+    background-color: hsla(0, 0%, 0%, 0.7);
     transition: opacity 150ms ease-in-out;
   }
   .project__links:hover {
     opacity: 1;
+  }
+  .projects::before {
+    top: -13rem;
+    right: -14rem;
   }
 }
 
@@ -558,6 +612,7 @@ form > *:not(input[type="submit"]):focus-visible {
   }
 }
 
+
 /* ===============================
 Footer Section Styles
 ================================== */
@@ -575,6 +630,10 @@ footer .container {
   gap: 1.5rem;
 }
 
+footer .container::before {
+  top: 0;
+}
+
 @media (min-width: 48em) {
   footer .container {
     flex-direction: row;
@@ -590,9 +649,3 @@ footer .container {
     padding-bottom: 4rem;
   }
 }
-
-
-/* ===============================
-Tablet & Desktop Media Queries
-================================== */
-
