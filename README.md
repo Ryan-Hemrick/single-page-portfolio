@@ -11,7 +11,7 @@ This project is static and fully-responsive across various device sizes. By defa
 - Submit a basic form to a user. (This project is not wired up to send an email, just to provide front-end form validation)
 
 ## Live Site URL
-[Preview the site here (hosted via Netlify)](https://www.frontendmentor.io/challenges/singlepage-developer-portfolio-bBVj2ZPi-x)
+[Preview the site here (hosted via Netlify)](https://chimerical-selkie-e9a9da.netlify.app)
 
 ## Development Process
 - Utilized semantic HTML markup, divided into three main blocks, with the *main* block further divided into *section* elements:
