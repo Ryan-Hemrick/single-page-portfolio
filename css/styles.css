@@ -196,6 +196,7 @@ Hero Section Styles
 .hero__content {
   order: 1;
   text-align: center;
+  max-width: 450px;
 }
 
 .hero__img {
@@ -276,6 +277,7 @@ footer .container::before {
     text-align: left;
     padding-top: 7.375rem;
     z-index: 2;
+    max-width: 100%;
   }
   .hero__img {
     order: 1;
