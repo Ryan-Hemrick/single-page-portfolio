@@ -1,55 +1,36 @@
-# Frontend Mentor - Single-page developer portfolio solution
+# Single-Page Developer Portfolio
 
-This is a solution to the [Single-page developer portfolio challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/singlepage-developer-portfolio-bBVj2ZPi-x). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+## About This Project
+The objective of this project was to translate a design spec into a fully-responsive portfolio website. This is a solution to the [Single-page developer portfolio challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/singlepage-developer-portfolio-bBVj2ZPi-x). The provided design spec is for a *fictional* client. 
 
-## Table of contents
+## How to Use / Functionality
+This project is static and fully-responsive across various device sizes. By default, the website is *fictional*, thus all the **links** use placeholder addresses. Users have the functionality to:
+- Click through to the individual's social profiles
+- View relevant skills and years of experience
+- View projects and click through to the respective repositories and site URLs
+- Submit a basic form to a user. (This project is not wired up to send an email, just to provide front-end form validation)
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
+## Live Site URL
+[Preview the site here (hosted via Netlify)](https://www.frontendmentor.io/challenges/singlepage-developer-portfolio-bBVj2ZPi-x)
 
+## Development Process
+- Utilized semantic HTML markup, divided into three main blocks, with the *main* block further divided into *section* elements:
+  - Header
+  - Main
+  - Footer
+- Used a mobile-first approach for writing the CSS. Utilized two *breakpoint* media queries to adapt the layout for larger devices (Tablet, Desktop)
+- Used a *container* class to set the max-width of the different sections, allowing for full-width backgrounds
+- Utilized various *flexbox* properties to achieve the desired responsiveness and to match the design spec. Adjusted those properties within the two major breakpoints to adapt the layout to larger devices
+- Used *CSS Grid* to overlay the **View Project** and **View Code** links over the project image
 
-## Overview
-- A fully-responsive landing page built with HTML and CSS
+## Technologies Used
+* HTML
+* CSS
+  * Grid
+  * Flexbox
 
-
-### The challenge
-- Create a fully-responsive landing page, using the provided *Figma* file as your style guide and reference
-
-
-### Screenshot
+## Screenshot
 ![](./screenshot.png)
 
-
-### Links
-- Live Site URL: https://bucolic-daifuku-0e2b9e.netlify.app
-
-
-## My process
-- Utilized various *flexbox* properties to achieve the desired responsiveness and to match the provided design spec
-- Used a *container* class to set the max-width of the different sections, allowing for full-width backgrounds
-- Used a mobile-first approach to writing CSS
-- Adjusted *flexbox* properties within media queries to adapt the website to larger device sizes
- 
-
-### Built with
-- Semantic HTML5 markup
-- CSS custom properties
-- CSS Flexbox
-- Mobile-first approach to CSS
-
-
-### What I learned
-- How to navigate *Figma* at a basic level (this was my first time using and navigating Figma)
-- What to look for in a *style guide*, and how to translate that guide into reusable CSS properties and variables
-- A basic solution to creating overlapping elements that are also responsive
-- Working with *variable fonts*
-
-
-## Author
-Ryan Hemrick
+## Credits
+- Frontend Mentor for the design spec
