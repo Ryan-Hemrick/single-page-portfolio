@@ -22,6 +22,7 @@ This project is static and fully-responsive across various device sizes. By defa
 - Used a *container* class to set the max-width of the different sections, allowing for full-width backgrounds
 - Utilized various *flexbox* properties to achieve the desired responsiveness and to match the design spec. Adjusted those properties within the two major breakpoints to adapt the layout to larger devices
 - Used *CSS Grid* to overlay the **View Project** and **View Code** links over the project image
+- Used the *picture* element to serve differently-sized images depending on the device size
 
 ## Technologies Used
 * HTML
