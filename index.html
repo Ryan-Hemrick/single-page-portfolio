@@ -17,6 +17,9 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
+  <!-- Client-side form validation -->
+  <script defer src="js/app.js"></script>
+
   <title>Frontend Mentor | Single-page developer portfolio</title>
 </head>
 
@@ -241,10 +244,19 @@
         </div>
 
         <div class="contact__form">
-          <form action="#" method="POST">
-            <input type="text" name="name" id="name" required placeholder="NAME">
-            <input type="email" name="email" id="email" required placeholder="EMAIL">
-            <textarea name="message" id="message" rows="4" placeholder="MESSAGE"></textarea>
+          <form action="/" method="POST" id="contact-form">
+            <div class="input-wrapper">
+              <input type="text" name="name" id="name" placeholder="NAME">
+              <div class="error__text"></div>
+            </div>
+            <div class="input-wrapper">
+              <input type="email" name="email" id="email" placeholder="EMAIL">
+              <div class="error__text"></div>
+            </div>
+            <div class="input-wrapper">
+              <textarea name="message" id="message" rows="4" placeholder="MESSAGE"></textarea>
+              <div class="error__text"></div>
+            </div>
             <input type="submit" value="Send Message">
           </form>
         </div>

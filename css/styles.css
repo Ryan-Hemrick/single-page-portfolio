@@ -545,11 +545,13 @@ form {
   flex-direction: column;
 }
 
-form > * {
+form input,
+form textarea {
   width: 100%;
 }
 
-form > *:not(input[type="submit"]) {
+form input:not(input[type="submit"]),
+form textarea {
   border: none;
   border-bottom: 1px solid var(--clr-white);
   color: var(--clr-white);
@@ -559,7 +561,8 @@ form > *:not(input[type="submit"]) {
   margin-bottom: 0.75rem;
 }
 
-form > *:not(input[type="submit"])::placeholder {
+form input:not(input[type="submit"])::placeholder,
+form textarea::placeholder {
   color: var(--clr-white);
   opacity: 0.5;
 }
@@ -580,10 +583,27 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-form > *:not(input[type="submit"]):focus-visible {
-  outline: none;
+form input:not(input[type="submit"]):focus-visible,
+form textarea:focus-visible {
+  outline: 0;
   border-color: var(--clr-green);
 }
+
+
+.input-wrapper.success input,
+.input-wrapper.success textarea {
+  border-color: blue;
+}
+
+.input-wrapper.error input,
+.input-wrapper.error textarea {
+  border-color: red;
+}
+
+.input-wrapper .error__text {
+  color: red;
+}
+
 
 @media (min-width: 48em) {
   .contact .container {
