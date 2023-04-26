@@ -177,7 +177,7 @@ nav.socials li a:focus path {
   }
 }
 @media (min-width: 73.125em) {
-  .socials.top {
+  .socials#top {
     padding-right: 1.75rem;
   }
 }
