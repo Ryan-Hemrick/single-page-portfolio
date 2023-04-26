@@ -8,6 +8,7 @@ CSS Variables
   --clr-grey: hsl(0, 0%, 85%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-green: hsl(153, 71%, 59%);
+  --clr-error: hsl(7, 100%, 68%);
  
   --ff-SpaceGrotesk: 'Space Grotesk', Arial, Helvetica, sans-serif;
 }
@@ -545,13 +546,8 @@ form {
   flex-direction: column;
 }
 
-form input,
-form textarea {
+form .input-wrapper >:not(.error__text) {
   width: 100%;
-}
-
-form input:not(input[type="submit"]),
-form textarea {
   border: none;
   border-bottom: 1px solid var(--clr-white);
   color: var(--clr-white);
@@ -561,8 +557,7 @@ form textarea {
   margin-bottom: 0.75rem;
 }
 
-form input:not(input[type="submit"])::placeholder,
-form textarea::placeholder {
+form .input-wrapper >:not(.error__text)::placeholder {
   color: var(--clr-white);
   opacity: 0.5;
 }
@@ -583,25 +578,37 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-form input:not(input[type="submit"]):focus-visible,
-form textarea:focus-visible {
+form .input-wrapper >:not(.error__text):focus-visible {
   outline: 0;
   border-color: var(--clr-green);
 }
 
 
-.input-wrapper.success input,
-.input-wrapper.success textarea {
-  border-color: blue;
+.input-wrapper.success >:not(.error__text) {
+  border-color: var(--clr-green);
 }
 
-.input-wrapper.error input,
-.input-wrapper.error textarea {
-  border-color: red;
+.input-wrapper.error >:not(.error__text) {
+  border-color: var(--clr-error);
 }
 
-.input-wrapper .error__text {
-  color: red;
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper.error >:not(.error__text) {
+  background-image: url(../images/error-icon.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right 50%;
+}
+
+.error__text {
+  color: var(--clr-error);
+  font-size: 0.75rem;
+  position: absolute;
+  right: 0;
+  bottom: -0.5rem;
 }
 
 
