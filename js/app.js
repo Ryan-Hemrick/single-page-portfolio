@@ -4,6 +4,7 @@ const username = document.getElementById('name');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
 
+
 // Add submit event listener on form
 form.addEventListener('submit', event => {
   // Prevent form from submitting
@@ -12,28 +13,37 @@ form.addEventListener('submit', event => {
   validateInputs();
 });
 
+
 const setError = (element, message) => {
+  // Capture inputWrapper and errorMessage elements
   const inputWrapper = element.parentElement;
   const errorMessage = inputWrapper.querySelector('.error__text');
 
+  // Set errorMessage to provided 'message', add/remove state classes
   errorMessage.innerText = message;
   inputWrapper.classList.add('error');
   inputWrapper.classList.remove('success');
 }
 
+
 const setSuccess = element => {
+  // Capture inputWrapper and errorMessage elements
   const inputWrapper = element.parentElement;
   const errorMessage = inputWrapper.querySelector('.error__text');
 
+  // Remove errorMessage, add/remove state classes
   errorMessage.innerText = '';
   inputWrapper.classList.add('success');
   inputWrapper.classList.remove('error');
 }
 
+
+// Validate that the provided email address matches RE
 const isValidEmailAddress = email => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());  
 }
+
 
 const validateInputs = () => {
 
@@ -45,6 +55,7 @@ const validateInputs = () => {
   // 2. Check that required inputs have a value
   //   2a. If inputs do NOT have a value, call setError() function
   //   2b. If inputs DO have a value, call setSuccess() function
+  //   2c. If email address is NOT valid, set alternate error message
   if (usernameValue === '') {
     setError(username, 'Name is required');
   } else {
