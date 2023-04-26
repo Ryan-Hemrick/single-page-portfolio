@@ -75,6 +75,7 @@ Utility Classes
   max-width: 100%;
   padding: 0 1.125rem;
   position: relative;
+  margin: 0 auto;
 }
 
 
@@ -83,7 +84,6 @@ Utility Classes
     padding: 0 1.875rem;
     /* 1110px for desktop + 60px of padding */
     max-width: 1170px;
-    margin: 0 auto;
   } 
   .heading-xl {
     font-size: 4.5rem;
@@ -535,6 +535,7 @@ Contact Section Styles
   padding-top: 4.75rem;
   padding-bottom: 4.75rem;
   text-align: center;
+  max-width: 450px;
 }
 
 .contact__info__header {

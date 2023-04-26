@@ -15,24 +15,24 @@ form.addEventListener('submit', event => {
 
 
 const setError = (element, message) => {
-  // Capture inputWrapper and errorMessage elements
+  // Capture input-wrapper and error__text elements
   const inputWrapper = element.parentElement;
-  const errorMessage = inputWrapper.querySelector('.error__text');
+  const errorText = inputWrapper.querySelector('.error__text');
 
-  // Set errorMessage to provided 'message', add/remove state classes
-  errorMessage.innerText = message;
+  // Set errorText to provided 'message', add/remove state classes
+  errorText.innerText = message;
   inputWrapper.classList.add('error');
   inputWrapper.classList.remove('success');
 }
 
 
 const setSuccess = element => {
-  // Capture inputWrapper and errorMessage elements
+  // Capture input-wrapper and error__text elements
   const inputWrapper = element.parentElement;
-  const errorMessage = inputWrapper.querySelector('.error__text');
+  const errorText = inputWrapper.querySelector('.error__text');
 
-  // Remove errorMessage, add/remove state classes
-  errorMessage.innerText = '';
+  // Remove errorText, add/remove state classes
+  errorText.innerText = '';
   inputWrapper.classList.add('success');
   inputWrapper.classList.remove('error');
 }
