@@ -9,6 +9,11 @@ This project is static and fully-responsive across various device sizes. By defa
 - View relevant skills and years of experience
 - View projects and click through to the respective repositories and site URLs
 - Submit a basic form to a user. (This project is not wired up to send an email, just to provide front-end form validation)
+- See hover and focus states for all interactive elements on the page
+- View the optimal layout for the interface depending on their device's screen size
+- Receive an error message when the form is submitted if:
+  - Any field is empty
+  - The email address is not formatted correctly
 
 ## Live Site URL
 [Preview the site here (hosted via Netlify)](https://chimerical-selkie-e9a9da.netlify.app)
