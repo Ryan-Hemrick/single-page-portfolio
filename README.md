@@ -25,12 +25,14 @@ This project is static and fully-responsive across various device sizes. By defa
     - Further divided into *section* elements
   - Footer
 - Used *figma* to reference the design spec
+- Used vanilla JavaScript to provide client-side validation for the contact form
 
 ## Technologies Used
 * HTML
 * CSS
   * Grid
   * Flexbox
+* JavaScript
 
 ## Screenshot
 ![](./screenshot.png)
