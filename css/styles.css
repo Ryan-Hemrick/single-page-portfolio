@@ -187,6 +187,27 @@ nav.socials li a:focus path {
 Hero Section Styles
 ================================== */
 
+.hero {
+  background-color: var(--clr-black);
+  background-image: url('../images/pattern-rings.svg');
+  background-repeat: no-repeat;
+  background-size: auto 8rem;
+  background-position: left -21.875rem top 8.5rem;
+}
+
+.hero__img::after {
+  content: "";
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  background-color: transparent;
+  background-image: url('../images/pattern-circle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: -4rem;
+  top: 16rem; 
+}
+
 .hero .container {
   display: flex;
   flex-direction: column;
@@ -246,26 +267,6 @@ footer .container::before {
   bottom: 0;  
 }
 
-.hero {
-  background-color: var(--clr-black);
-  background-image: url('../images/pattern-rings.svg');
-  background-repeat: no-repeat;
-  background-size: auto 8rem;
-  background-position: left -21.875rem top 8.5rem;
-}
-
-.hero__img::after {
-  content: "";
-  position: absolute;
-  height: 8rem;
-  width: 8rem;
-  background-color: transparent;
-  background-image: url('../images/pattern-circle.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  right: -4rem;
-  top: 16rem; 
-}
 
 @media (min-width: 48em) {
   .hero .container {
@@ -524,6 +525,10 @@ Contact Section Styles
 
 .contact {
   background-color: var(--clr-darkgrey);
+  background-image: url('../images/pattern-rings.svg');
+  background-repeat: no-repeat;
+  background-size: auto 8rem;
+  background-position: left -21.875rem bottom 5.25rem;
 }
 
 .contact .container {
@@ -618,6 +623,9 @@ form .input-wrapper >:not(.error__text):focus-visible {
     padding-bottom: 5.625rem;
     max-width: 500px;
   } 
+  .contact {
+    background-position: left -23rem bottom 2rem;
+  }
 }
 
 @media (min-width: 73.125em) {
@@ -638,6 +646,9 @@ form .input-wrapper >:not(.error__text):focus-visible {
   }
   .contact__info__header {
     margin-bottom: 2.125rem;
+  }
+  .contact {
+    background-position: left -13rem bottom 2rem;
   }
 }
 
